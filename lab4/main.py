@@ -15,7 +15,12 @@ def unbalanced(v_count):
                 G.add_edge(u, v)
     return G
 
-
+# def balanced(v_count):
+#     G = nx.complete_graph(v_count)
+#     e_count = v_count * (v_count - 1) // 4
+#     edges_to_remove = random.sample(list(G.edges()), len(G.edges()) - e_count)
+#     G.remove_edges_from(edges_to_remove)
+#     return G
 def balanced(v_count):
     if v_count % 2 == 1:
         raise ValueError("Number of vertices must be even")
